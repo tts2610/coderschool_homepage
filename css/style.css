@@ -166,3 +166,30 @@ section .card {
     background-color: #ecebea;
     padding-top: 10%;
 }
+
+.section_4 {
+    padding-top: 10%;
+}
+
+.section_4>.container>p:nth-last-of-type(1) {
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+form {
+    text-align: left;
+}
+
+.red {
+    color: #cd4541;
+}
+
+.bg-red {
+    background-color: #cd4541;
+    border: none;
+}
+
+.bg-red:hover {
+    background-color: #cd4541;
+    filter: brightness(1.1);
+}
