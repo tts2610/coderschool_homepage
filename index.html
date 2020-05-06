@@ -17,6 +17,9 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
+
+
+
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="icon" href="https://www.coderschool.vn/icons/icon-48x48.png?v=00d51f92a4c79a319bb2416e94445801">
@@ -56,8 +59,8 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-xl-7">
-                            <div class="typewriter" id="myTypewriter">
-                                <h1>Pay nothing upfront</h1>
+                            <div class="typewriter">
+                                <h1 id="myTypewriter"></h1>
                             </div>
                             <div class="space"></div>
                             <div class="subtitle">Our coding courses come with a simple guarantee: you only pay after you get hired as a software engineer. Our courses are tough, but we guarantee our results.</div>
@@ -74,32 +77,56 @@
             <div class="container">
                 <div class="space"></div>
                 <h1>Curriculum designed to get you hired</h1>
-                <h2>Originally developed in Silicon Valley, our teaching materials bring a wealth of experience in coding education. We focus on real-world projects so you can build a strong portfolio of real apps that simulate the types of challenges you
+                <h2 style="margin-top: 10px;">Originally developed in Silicon Valley, our teaching materials bring a wealth of experience in coding education. We focus on real-world projects so you can build a strong portfolio of real apps that simulate the types of challenges you
                     will meet in your professional career.
                 </h2>
                 <div class="card-deck">
                     <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <img class="card-img-top card-center" src="https://www.coderschool.vn/assets/coding.svg" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <h5 class="card-title course-card-title">Full Stack Web Development</h5>
+                            <p class="card-text course-card-subtitle">Monday, June 29th</p>
+                            <p class="card-text course-card-description">HTML/CSS, JavaScript, React, NodeJS, Java, Boostrap, TypeScript and more</p>
+                            <button type="button" class="btn btn-danger" id="btn-learn">Learn more</button>
                         </div>
                     </div>
                     <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <img class="card-img-top card-center" src="https://www.coderschool.vn/assets/ai.svg" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <h5 class="card-title course-card-title">AI/Machine Learning Engineer</h5>
+                            <p class="card-text course-card-subtitle">Monday, May 18th</p>
+                            <p class="card-text course-card-description">Python, SQL, Machine Learning, Deep Learning, NLP, GCP, End-to-end Machine Learning</p>
+                            <button type="button" class="btn btn-danger" id="btn-learn">Learn more</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="custom-bg">
+            <div class="container">
+                <div class="space"></div>
+                <h1>Curriculum designed to get you hired</h1>
+                <h2 style="margin-top: 10px;">Originally developed in Silicon Valley, our teaching materials bring a wealth of experience in coding education. We focus on real-world projects so you can build a strong portfolio of real apps that simulate the types of challenges you
+                    will meet in your professional career.
+                </h2>
+                <div class="card-deck">
+                    <div class="card">
+                        <img class="card-img-top card-center" src="https://www.coderschool.vn/assets/coding.svg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title course-card-title">Full Stack Web Development</h5>
+                            <p class="card-text course-card-subtitle">Monday, June 29th</p>
+                            <p class="card-text course-card-description">HTML/CSS, JavaScript, React, NodeJS, Java, Boostrap, TypeScript and more</p>
+                            <button type="button" class="btn btn-danger" id="btn-learn">Learn more</button>
                         </div>
                     </div>
                     <div class="card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <img class="card-img-top card-center" src="https://www.coderschool.vn/assets/ai.svg" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <h5 class="card-title course-card-title">AI/Machine Learning Engineer</h5>
+                            <p class="card-text course-card-subtitle">Monday, May 18th</p>
+                            <p class="card-text course-card-description">Python, SQL, Machine Learning, Deep Learning, NLP, GCP, End-to-end Machine Learning</p>
+                            <button type="button" class="btn btn-danger" id="btn-learn">Learn more</button>
                         </div>
                     </div>
                 </div>
@@ -112,27 +139,21 @@
 
 
 </body>
-
+<script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
 <script>
-    var messages = ["Pay nothing upfront", "What are you waiting for?"];
-    var rank = 0;
+    var app = document.getElementById('myTypewriter');
 
-    // Code for Chrome, Safari and Opera
-    document.getElementById("myTypewriter").addEventListener("webkitAnimationEnd", changeTxt);
+    var typewriter = new Typewriter(app, {
+        loop: true
+    });
 
-    // Standard syntax
-    document.getElementById("myTypewriter").addEventListener("animationend", changeTxt);
-
-    function changeTxt(e) {
-        _h1 = this.getElementsByTagName("h1")[0];
-        _h1.style.webkitAnimation = 'none'; // set element animation to none
-        setTimeout(function() { // you surely want a delay before the next message appears
-            _h1.innerHTML = messages[rank];
-            var speed = 3.5 * messages[rank].length / 20; // adjust the speed (3.5 is the original speed, 20 is the original string length
-            _h1.style.webkitAnimation = 'typing ' + speed + 's steps(40, end), blink-caret .75s step-end infinite'; //  switch to the original set of animation      
-            (rank === messages.length - 1) ? rank = 0: rank++; // if you have displayed the last message from the array, go back to the first one, else go to next message
-        }, 1000);
-    }
+    typewriter.typeString('Pay nothing upfront')
+        .pauseFor(1500)
+        .deleteAll()
+        .typeString('What are you waiting for?')
+        .pauseFor(1500)
+        .deleteAll()
+        .start();
 </script>
 
 </html>
