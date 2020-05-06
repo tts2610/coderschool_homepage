@@ -32,15 +32,16 @@ h1 {
 /* BEGIN NAV BAR */
 
 .right-menu {
-    width: 49%;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
 }
 
-#navbarSupportedContent {
+
+/* #navbarSupportedContent {
     display: flex;
     justify-content: flex-end;
-}
+} */
 
 .right-menu button {
     margin-right: 10px;
